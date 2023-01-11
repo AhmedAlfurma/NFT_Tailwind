@@ -1,0 +1,1580 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="keywords" content="Alfurma" />
+    <meta name="description" content="Alfurma" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="icon" href="imgs/Alfurma-logo.jpg" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+    />
+
+    <style>
+      .swiper-pagination .swiper-pagination-bullet {
+        background-color: rgb(70, 63, 199) !important;
+        width: 13px;
+        height: 13px;
+      }
+      .gradient-bg:hover {
+        background: linear-gradient(
+          158.44deg,
+          #ebc77a 7.17%,
+          #ca3f8d 52.72%,
+          #5142fc 91.26%
+        ) !important;
+      }
+    </style>
+
+    <title>NFT Tailwind Template</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="font-['Open_Sans'] bg-[#141420]">
+    <header id="header" class="fixed z-[100] w-full top-0 transition-all py-7">
+      <div class="container mx-auto flex items-center justify-between px-5">
+        <a href="#" class="logo"><img src="imgs/logo.svg" alt="..." /></a>
+        <button
+          onclick="classList.toggle('group'); document.querySelector('#ul').classList.toggle('max-[992px]:hidden')"
+          @click="navbarOpen = !navbarOpen "
+          id="navbarToggler"
+          name="navbarToggler"
+          aria-label="navbarToggler"
+          class="min-[992px]:hidden order-last ml-5"
+        >
+          <span
+            class="w-8 h-[2px] block my-[5px] bg-white transition-all group-focus:bg-red-500 group-focus:rotate-[50deg] group-focus:translate-y-1"
+          ></span>
+          <span
+            class="w-8 h-[2px] block my-[5px] bg-white transition-all group-focus:hidden"
+          ></span>
+          <span
+            class="w-8 h-[2px] block my-[5px] bg-white transition-all group-focus:bg-red-500 group-focus:-rotate-[50deg] group-focus:-translate-y-[2px]"
+          ></span>
+        </button>
+        <nav class="">
+          <ul
+            id="ul"
+            class="flex gap-7 max-[992px]:hidden max-[992px]:flex-col max-[992px]:bg-gray-800 max-[992px]:p-4 max-[992px]:rounded-md max-[992px]:w-52 max-[992px]:fixed max-[992px]:top-24 max-[992px]:right-9"
+          >
+            <li class="font-bold cursor-pointer text-white transition">
+              <a href="#">Home</a>
+            </li>
+            <li
+              class="text-zinc-400 font-bold cursor-pointer hover:text-white transition"
+            >
+              <a href="#">Explore</a>
+            </li>
+            <li
+              class="text-zinc-400 font-bold cursor-pointer hover:text-white transition"
+            >
+              <a href="#">Community</a>
+            </li>
+            <li
+              class="text-zinc-400 font-bold cursor-pointer hover:text-white transition"
+            >
+              <a href="#">Support</a>
+            </li>
+          </ul>
+        </nav>
+        <div
+          class="flex items-center gap-4 flex-1 justify-end min-[991px]:flex-none"
+        >
+          <div class="relative group">
+            <button
+              class="text-zinc-400 pl-2 group py-2 hover:text-indigo-700 max-sm:hidden"
+            >
+              <svg
+                width="26"
+                height="26"
+                viewBox="0 0 26 26"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M10.2917 3.25C12.1592 3.25 13.9503 3.99189 15.2709 5.31246C16.5914 6.63303 17.3333 8.4241 17.3333 10.2917C17.3333 12.0358 16.6942 13.6392 15.6433 14.8742L15.9358 15.1667H16.7917L22.2083 20.5833L20.5833 22.2083L15.1667 16.7917V15.9358L14.8742 15.6433C13.6392 16.6942 12.0358 17.3333 10.2917 17.3333C8.4241 17.3333 6.63303 16.5914 5.31246 15.2709C3.99189 13.9503 3.25 12.1592 3.25 10.2917C3.25 8.4241 3.99189 6.63303 5.31246 5.31246C6.63303 3.99189 8.4241 3.25 10.2917 3.25ZM10.2917 5.41667C7.58333 5.41667 5.41667 7.58333 5.41667 10.2917C5.41667 13 7.58333 15.1667 10.2917 15.1667C13 15.1667 15.1667 13 15.1667 10.2917C15.1667 7.58333 13 5.41667 10.2917 5.41667Z"
+                  fill="currentColor"
+                ></path>
+              </svg>
+            </button>
+            <div
+              class="bg-slate-900 p-4 flex mt-6 opacity-0 transition-all pointer-events-none group-hover:pointer-events-auto group-hover:opacity-100 group-hover:mt-1 items-center gap-2 rounded absolute top-9 -right-2"
+            >
+              <input
+                class="bg-transparent border-none outline-none text-white"
+                type="text"
+                name="search"
+                placeholder="Search here..."
+                autocomplete="off"
+              />
+              <svg
+                width="26"
+                height="26"
+                viewBox="0 0 26 26"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M10.2917 3.25C12.1592 3.25 13.9503 3.99189 15.2709 5.31246C16.5914 6.63303 17.3333 8.4241 17.3333 10.2917C17.3333 12.0358 16.6942 13.6392 15.6433 14.8742L15.9358 15.1667H16.7917L22.2083 20.5833L20.5833 22.2083L15.1667 16.7917V15.9358L14.8742 15.6433C13.6392 16.6942 12.0358 17.3333 10.2917 17.3333C8.4241 17.3333 6.63303 16.5914 5.31246 15.2709C3.99189 13.9503 3.25 12.1592 3.25 10.2917C3.25 8.4241 3.99189 6.63303 5.31246 5.31246C6.63303 3.99189 8.4241 3.25 10.2917 3.25ZM10.2917 5.41667C7.58333 5.41667 5.41667 7.58333 5.41667 10.2917C5.41667 13 7.58333 15.1667 10.2917 15.1667C13 15.1667 15.1667 13 15.1667 10.2917C15.1667 7.58333 13 5.41667 10.2917 5.41667Z"
+                  fill="#fff"
+                ></path>
+              </svg>
+            </div>
+          </div>
+          <div
+            class="wallet flex items-center gap-2 text-white border-2 p-4 py-3 rounded-lg hover:bg-indigo-600 hover:border-indigo-600 trnasition-all duration-[350ms] max-[480px]:hidden"
+          >
+            <span>
+              <svg
+                width="23"
+                height="24"
+                viewBox="0 0 23 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M20.125 17.75V18.7083C20.125 19.2167 19.9231 19.7042 19.5636 20.0636C19.2042 20.4231 18.7167 20.625 18.2083 20.625H4.79167C3.72792 20.625 2.875 19.7625 2.875 18.7083V5.29167C2.875 4.78333 3.07693 4.29582 3.43638 3.93638C3.79582 3.57693 4.28334 3.375 4.79167 3.375H18.2083C18.7167 3.375 19.2042 3.57693 19.5636 3.93638C19.9231 4.29582 20.125 4.78333 20.125 5.29167V6.25H11.5C10.4363 6.25 9.58333 7.1125 9.58333 8.16667V15.8333C9.58333 16.3417 9.78527 16.8292 10.1447 17.1886C10.5042 17.5481 10.9917 17.75 11.5 17.75H20.125ZM11.5 15.8333H21.0833V8.16667H11.5V15.8333ZM15.3333 13.4375C14.9521 13.4375 14.5865 13.286 14.3169 13.0165C14.0473 12.7469 13.8958 12.3812 13.8958 12C13.8958 11.6188 14.0473 11.2531 14.3169 10.9835C14.5865 10.714 14.9521 10.5625 15.3333 10.5625C15.7146 10.5625 16.0802 10.714 16.3498 10.9835C16.6194 11.2531 16.7708 11.6188 16.7708 12C16.7708 12.3812 16.6194 12.7469 16.3498 13.0165C16.0802 13.286 15.7146 13.4375 15.3333 13.4375Z"
+                  fill="white"
+                ></path>
+              </svg>
+            </span>
+            Wallet Connect
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="text-white">
+      <div
+        class="hero relative bg-[url('imgs/common-bg.jpg')] bg-no-repeat bg-cover bg-top pb-16"
+      >
+        <div
+          class="container mx-auto pt-40 lg:pt-28 flex flex-col lg:flex-row items-center px-5 gap-5"
+        >
+          <div
+            class="absolute inset-0 bg-[length:10px_3px]"
+            style="
+              background-image: linear-gradient(
+                415deg,
+                rgb(255 255 255 / 0.4) 1px,
+                transparent 1px
+              );
+            "
+          ></div>
+          <div
+            class="absolute inset-0 bg-gradient-to-b from-black/50 to-[#141420] z-20"
+          ></div>
+          <div
+            class="absolute top-32 bg-[url('imgs/hero-image.svg')] left-5 w-24 h-24 bg-cover z-10 blur-md saturate-150"
+          ></div>
+          <div class="relative z-30 basis-1/2">
+            <h1 class="text-white font-bold text-[40px] leading-tight">
+              Tailwind Template for NFT Marketplace and Web3 Platforms
+            </h1>
+            <p class="text-zinc-400 mt-4 text-lg">
+              Template for NFT, Token, and Web3 marketplace projects, based on
+              Tailwind CSS. Comes with all the essential UI components and pages
+              you need to build an NFT marketplace or all sorts of Web3
+              platforms.
+            </p>
+            <div class="mt-6 flex items-center gap-3 flex-wrap">
+              <a
+                href="#"
+                class="py-3 px-4 text-white border-2 border-indigo-600 bg-indigo-600 rounded-md inline-block font-bold text-[15px] transition-all hover:bg-indigo-700 hover:border-indigo-700"
+                >Explore now</a
+              >
+              <a
+                href="#"
+                class="py-3 px-4 text-white border-2 rounded-md inline-block font-bold text-[15px] transition-all hover:bg-indigo-700 hover:border-indigo-700"
+                >Upload Your Art</a
+              >
+            </div>
+          </div>
+          <div class="image relative z-30">
+            <img src="imgs/hero-image.svg" alt="..." />
+          </div>
+        </div>
+      </div>
+      <section>
+        <div class="container mx-auto px-5">
+          <div
+            class="border-b border-white/10 pb-4 flex items-center justify-between pt-5"
+          >
+            <h2 class="font-bold text-3xl">Top Artists</h2>
+            <div class="slide-buttons gap-3 hidden min-[400px]:flex">
+              <div
+                class="swiper-button-prev after:text-[20px] after:content-['prev'] px-4 static p-3 rounded-md border border-white/10 bg-[#20202b] transition-all hover:bg-indigo-600 hover:border-indigo-600 text-white"
+              ></div>
+              <div
+                class="rotate-180 swiper-button-next after:text-[20px] after:content-['prev'] px-4 static p-3 rounded-md border border-white/10 bg-[#20202b] transition-all hover:bg-indigo-600 hover:border-indigo-600 text-white"
+              ></div>
+            </div>
+          </div>
+          <div class="swiper-container relative mt-10">
+            <div class="swiper">
+              <div class="swiper-wrapper flex">
+                <div
+                  class="swiper-slide items-slide rounded-lg bg-white/30 p-[2px] gradient-bg"
+                >
+                  <div
+                    class="flex items-center gap-3 bg-[#2c2c39] p-5 rounded-lg group"
+                  >
+                    <div class="slide-image">
+                      <img src="imgs/artists/artists-1.png" alt="..." />
+                    </div>
+                    <div class="slide-content">
+                      <span class="font-bold block">@Elon_Mask</span>
+                      <span class="text-emerald-600 font-bold">9.89 ETH</span>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="swiper-slide items-slide rounded-lg bg-white/30 p-[2px] gradient-bg"
+                >
+                  <div
+                    class="flex items-center gap-3 bg-[#2c2c39] p-5 rounded-lg group"
+                  >
+                    <div class="slide-image">
+                      <img src="imgs/artists/artists-2.png" alt="..." />
+                    </div>
+                    <div class="slide-content">
+                      <span class="font-bold block">@Devid_Miller</span>
+                      <span class="text-emerald-600 font-bold">12.25 ETH</span>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="swiper-slide items-slide rounded-lg bg-white/30 p-[2px] gradient-bg"
+                >
+                  <div
+                    class="flex items-center gap-3 bg-[#2c2c39] p-5 rounded-lg group"
+                  >
+                    <div class="slide-image">
+                      <img src="imgs/artists/artists-1.png" alt="..." />
+                    </div>
+                    <div class="slide-content">
+                      <span class="font-bold block">@Elon_Mask</span>
+                      <span class="text-emerald-600 font-bold">9.89 ETH</span>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="swiper-slide items-slide rounded-lg bg-white/30 p-[2px] gradient-bg"
+                >
+                  <div
+                    class="flex items-center gap-3 bg-[#2c2c39] p-5 rounded-lg group"
+                  >
+                    <div class="slide-image">
+                      <img src="imgs/artists/artists-3.png" alt="..." />
+                    </div>
+                    <div class="slide-content">
+                      <span class="font-bold block">@Hiliya_Farah</span>
+                      <span class="text-emerald-600 font-bold">2.09 ETH</span>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="swiper-slide items-slide rounded-lg bg-white/30 p-[2px] gradient-bg"
+                >
+                  <div
+                    class="flex items-center gap-3 bg-[#2c2c39] p-5 rounded-lg group"
+                  >
+                    <div class="slide-image">
+                      <img src="imgs/artists/artists-4.png" alt="..." />
+                    </div>
+                    <div class="slide-content">
+                      <span class="font-bold block">@Devid_Miller</span>
+                      <span class="text-emerald-600 font-bold">14.55 ETH</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-pagination static mt-4"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="mt-5">
+        <div class="container mx-auto px-5">
+          <div
+            class="border-b border-white/10 pb-4 flex items-center justify-between pt-5"
+          >
+            <h2 class="font-bold text-3xl">Live Auctions</h2>
+            <a
+              class="bg-indigo-600 py-2 px-4 font-bold transition-all hover:bg-indigo-700 rounded-md hidden min-[400px]:block text-base"
+              href="#"
+              >View All</a
+            >
+          </div>
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-x-7 gap-y-9 mt-10">
+            <div
+              class="card p-4 border border-white/20 rounded-lg bg-[#2c2c39]"
+            >
+              <div class="relative">
+                <div
+                  class="flex items-center gap-1 bg-white text-slate-800/80 w-fit p-1 rounded-md text-xs font-bold absolute top-4 right-4 cursor-pointer"
+                >
+                  <svg
+                    width="14"
+                    height="14"
+                    viewBox="0 0 14 14"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M6.99999 11.8709L6.15416 11.1009C3.14999 8.37675 1.16666 6.57425 1.16666 4.37508C1.16666 2.57258 2.57832 1.16675 4.37499 1.16675C5.38999 1.16675 6.36416 1.63925 6.99999 2.38008C7.63582 1.63925 8.60999 1.16675 9.62499 1.16675C11.4217 1.16675 12.8333 2.57258 12.8333 4.37508C12.8333 6.57425 10.85 8.37675 7.84582 11.1009L6.99999 11.8709Z"
+                      fill="#F85486"
+                    ></path>
+                  </svg>
+                  4.6K
+                </div>
+                <img class="w-full" src="imgs/image-01.svg" alt="..." />
+              </div>
+              <div class="body mt-4">
+                <h4
+                  class="font-bold text-lg w-fit tracking-wide trnasition-all hover:text-indigo-700 cursor-pointer"
+                >
+                  22-Bit Digital #551
+                </h4>
+                <div class="flex items-center justify-between mt-3">
+                  <div class="flex items-center gap-2">
+                    <img src="imgs/creator-01.png" alt="." />
+                    <div>
+                      <span class="block text-xs font-bold"
+                        >@Devid_Mill...</span
+                      >
+                      <span class="block text-xs font-bold text-zinc-400"
+                        >creator</span
+                      >
+                    </div>
+                  </div>
+                  <div class="text-right">
+                    <span class="block text-xs font-bold">5.49 ETH</span>
+                    <span class="block text-xs font-bold text-zinc-400"
+                      >Current Bit</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="foot bg-white/10 rounded-md p-2 text-center mt-4">
+                <p>05 : 15 : 07 : 45</p>
+              </div>
+            </div>
+            <div
+              class="card p-4 border border-white/20 rounded-lg bg-[#2c2c39]"
+            >
+              <div class="relative">
+                <div
+                  class="flex items-center gap-1 bg-white text-slate-800/80 w-fit p-1 rounded-md text-xs font-bold absolute top-4 right-4 cursor-pointer"
+                >
+                  <svg
+                    width="14"
+                    height="14"
+                    viewBox="0 0 14 14"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M6.99999 11.8709L6.15416 11.1009C3.14999 8.37675 1.16666 6.57425 1.16666 4.37508C1.16666 2.57258 2.57832 1.16675 4.37499 1.16675C5.38999 1.16675 6.36416 1.63925 6.99999 2.38008C7.63582 1.63925 8.60999 1.16675 9.62499 1.16675C11.4217 1.16675 12.8333 2.57258 12.8333 4.37508C12.8333 6.57425 10.85 8.37675 7.84582 11.1009L6.99999 11.8709Z"
+                      fill="#F85486"
+                    ></path>
+                  </svg>
+                  500
+                </div>
+                <img class="w-full" src="imgs/image-02.svg" alt="..." />
+              </div>
+              <div class="body mt-4">
+                <h4
+                  class="font-bold text-lg w-fit tracking-wide trnasition-all hover:text-indigo-700 cursor-pointer"
+                >
+                  25-Bit Digital #729
+                </h4>
+                <div class="flex items-center justify-between mt-3">
+                  <div class="flex items-center gap-2">
+                    <img src="imgs/creator-01.png" alt="." />
+                    <div>
+                      <span class="block text-xs font-bold"
+                        >@Devid_Meth...</span
+                      >
+                      <span class="block text-xs font-bold text-zinc-400"
+                        >creator</span
+                      >
+                    </div>
+                  </div>
+                  <div class="text-right">
+                    <span class="block text-xs font-bold">1.58 ETH</span>
+                    <span class="block text-xs font-bold text-zinc-400"
+                      >Current Bit</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="foot bg-white/10 rounded-md p-2 text-center mt-4">
+                <p>06 : 15 : 07 : 55</p>
+              </div>
+            </div>
+            <div
+              class="card p-4 border border-white/20 rounded-lg bg-[#2c2c39]"
+            >
+              <div class="relative">
+                <div
+                  class="flex items-center gap-1 bg-white text-slate-800/80 w-fit p-1 rounded-md text-xs font-bold absolute top-4 right-4 cursor-pointer"
+                >
+                  <svg
+                    width="14"
+                    height="14"
+                    viewBox="0 0 14 14"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M6.99999 11.8709L6.15416 11.1009C3.14999 8.37675 1.16666 6.57425 1.16666 4.37508C1.16666 2.57258 2.57832 1.16675 4.37499 1.16675C5.38999 1.16675 6.36416 1.63925 6.99999 2.38008C7.63582 1.63925 8.60999 1.16675 9.62499 1.16675C11.4217 1.16675 12.8333 2.57258 12.8333 4.37508C12.8333 6.57425 10.85 8.37675 7.84582 11.1009L6.99999 11.8709Z"
+                      fill="#F85486"
+                    ></path>
+                  </svg>
+                  200
+                </div>
+                <img class="w-full" src="imgs/image-03.svg" alt="..." />
+              </div>
+              <div class="body mt-4">
+                <h4
+                  class="font-bold text-lg w-fit tracking-wide trnasition-all hover:text-indigo-700 cursor-pointer"
+                >
+                  35-Bit Digital #439
+                </h4>
+                <div class="flex items-center justify-between mt-3">
+                  <div class="flex items-center gap-2">
+                    <img src="imgs/creator-01.png" alt="." />
+                    <div>
+                      <span class="block text-xs font-bold"
+                        >@Miliya_Cho...</span
+                      >
+                      <span class="block text-xs font-bold text-zinc-400"
+                        >creator</span
+                      >
+                    </div>
+                  </div>
+                  <div class="text-right">
+                    <span class="block text-xs font-bold">1.57 ETH</span>
+                    <span class="block text-xs font-bold text-zinc-400"
+                      >Current Bit</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="foot bg-white/10 rounded-md p-2 text-center mt-4">
+                <p>07 : 15 : 03 : 12</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="mt-10">
+        <div class="container mx-auto px-5">
+          <div
+            class="border-b border-white/10 pb-4 flex items-center justify-between pt-5"
+          >
+            <h2 class="font-bold text-3xl">Today's Picks</h2>
+            <a
+              class="bg-indigo-600 py-2 px-4 font-bold transition-all hover:bg-indigo-700 rounded-md hidden min-[400px]:block text-base"
+              href="#"
+              >View All</a
+            >
+          </div>
+          <div
+            class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mt-10 gap-x-7 gap-y-9"
+          >
+            <div class="card">
+              <div
+                class="card p-4 border border-white/20 rounded-lg bg-[#2c2c39]"
+              >
+                <div class="relative">
+                  <div
+                    class="flex items-center gap-1 bg-white text-slate-800/80 w-fit p-1 rounded-md text-xs font-bold absolute top-4 right-4 cursor-pointer"
+                  >
+                    <svg
+                      width="14"
+                      height="14"
+                      viewBox="0 0 14 14"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M6.99999 11.8709L6.15416 11.1009C3.14999 8.37675 1.16666 6.57425 1.16666 4.37508C1.16666 2.57258 2.57832 1.16675 4.37499 1.16675C5.38999 1.16675 6.36416 1.63925 6.99999 2.38008C7.63582 1.63925 8.60999 1.16675 9.62499 1.16675C11.4217 1.16675 12.8333 2.57258 12.8333 4.37508C12.8333 6.57425 10.85 8.37675 7.84582 11.1009L6.99999 11.8709Z"
+                        fill="#F85486"
+                      ></path>
+                    </svg>
+                    500
+                  </div>
+                  <img class="w-full" src="imgs/image-02.svg" alt="..." />
+                </div>
+                <div class="body mt-4">
+                  <h4
+                    class="font-bold text-lg w-fit tracking-wide trnasition-all hover:text-indigo-700 cursor-pointer"
+                  >
+                    3d abstract illustration
+                  </h4>
+                  <div class="flex items-center justify-between mt-3">
+                    <div class="flex items-center gap-2">
+                      <img src="imgs/picks/creator-01.png" alt=".." />
+                      <div>
+                        <span class="block text-xs font-bold"
+                          >@Devid_Meth...</span
+                        >
+                        <span class="block text-xs font-bold text-zinc-400"
+                          >creator</span
+                        >
+                      </div>
+                    </div>
+                    <div class="text-right">
+                      <span class="block text-xs font-bold">1.58 ETH</span>
+                      <span class="block text-xs font-bold text-zinc-400"
+                        >Current Bit</span
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="foot pt-5 pb-1 border-t mt-5 border-white/40 flex items-center justify-between"
+                >
+                  <a
+                    class="p-2 px-3 rounded-md bg-indigo-600 text-sm font-bold transition-all hover:bg-indigo-700"
+                    href="#"
+                    >Place Bid</a
+                  >
+                  <a
+                    class="flex items-center gap-1 text-base hover:text-indigo-700"
+                    href="#"
+                  >
+                    <svg
+                      width="18"
+                      height="18"
+                      viewBox="0 0 18 18"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M9 4.5V6.75L12 3.75L9 0.75V3C7.4087 3 5.88258 3.63214 4.75736 4.75736C3.63214 5.88258 3 7.4087 3 9C3 10.1775 3.345 11.2725 3.93 12.195L5.025 11.1C4.6875 10.4775 4.5 9.75 4.5 9C4.5 7.80653 4.97411 6.66193 5.81802 5.81802C6.66193 4.97411 7.80652 4.5 9 4.5ZM14.07 5.805L12.975 6.9C13.305 7.53 13.5 8.25 13.5 9C13.5 10.1935 13.0259 11.3381 12.182 12.182C11.3381 13.0259 10.1935 13.5 9 13.5V11.25L6 14.25L9 17.25V15C10.5913 15 12.1174 14.3679 13.2426 13.2426C14.3679 12.1174 15 10.5913 15 9C15 7.8225 14.655 6.7275 14.07 5.805Z"
+                        fill="currentColor"
+                      ></path>
+                    </svg>
+                    View History
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div
+                class="card p-4 border border-white/20 rounded-lg bg-[#2c2c39]"
+              >
+                <div class="relative">
+                  <div
+                    class="flex items-center gap-1 bg-white text-slate-800/80 w-fit p-1 rounded-md text-xs font-bold absolute top-4 right-4 cursor-pointer"
+                  >
+                    <svg
+                      width="14"
+                      height="14"
+                      viewBox="0 0 14 14"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M6.99999 11.8709L6.15416 11.1009C3.14999 8.37675 1.16666 6.57425 1.16666 4.37508C1.16666 2.57258 2.57832 1.16675 4.37499 1.16675C5.38999 1.16675 6.36416 1.63925 6.99999 2.38008C7.63582 1.63925 8.60999 1.16675 9.62499 1.16675C11.4217 1.16675 12.8333 2.57258 12.8333 4.37508C12.8333 6.57425 10.85 8.37675 7.84582 11.1009L6.99999 11.8709Z"
+                        fill="#F85486"
+                      ></path>
+                    </svg>
+                    3.4K
+                  </div>
+                  <img class="w-full" src="imgs/picks/image-01.svg" alt="..." />
+                </div>
+                <div class="body mt-4">
+                  <h4
+                    class="font-bold text-lg w-fit tracking-wide trnasition-all hover:text-indigo-700 cursor-pointer"
+                  >
+                    3d abstract illustration
+                  </h4>
+                  <div class="flex items-center justify-between mt-3">
+                    <div class="flex items-center gap-2">
+                      <img src="imgs/picks/creator-02.png" alt=".." />
+                      <div>
+                        <span class="block text-xs font-bold"
+                          >@Devid_Meth...</span
+                        >
+                        <span class="block text-xs font-bold text-zinc-400"
+                          >creator</span
+                        >
+                      </div>
+                    </div>
+                    <div class="text-right">
+                      <span class="block text-xs font-bold">1.58 ETH</span>
+                      <span class="block text-xs font-bold text-zinc-400"
+                        >Current Bit</span
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="foot pt-5 pb-1 border-t mt-5 border-white/40 flex items-center justify-between"
+                >
+                  <a
+                    class="p-2 px-3 rounded-md bg-indigo-600 text-sm font-bold transition-all hover:bg-indigo-700"
+                    href="#"
+                    >Place Bid</a
+                  >
+                  <a
+                    class="flex items-center gap-1 text-base hover:text-indigo-700"
+                    href="#"
+                  >
+                    <svg
+                      width="18"
+                      height="18"
+                      viewBox="0 0 18 18"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M9 4.5V6.75L12 3.75L9 0.75V3C7.4087 3 5.88258 3.63214 4.75736 4.75736C3.63214 5.88258 3 7.4087 3 9C3 10.1775 3.345 11.2725 3.93 12.195L5.025 11.1C4.6875 10.4775 4.5 9.75 4.5 9C4.5 7.80653 4.97411 6.66193 5.81802 5.81802C6.66193 4.97411 7.80652 4.5 9 4.5ZM14.07 5.805L12.975 6.9C13.305 7.53 13.5 8.25 13.5 9C13.5 10.1935 13.0259 11.3381 12.182 12.182C11.3381 13.0259 10.1935 13.5 9 13.5V11.25L6 14.25L9 17.25V15C10.5913 15 12.1174 14.3679 13.2426 13.2426C14.3679 12.1174 15 10.5913 15 9C15 7.8225 14.655 6.7275 14.07 5.805Z"
+                        fill="currentColor"
+                      ></path>
+                    </svg>
+                    View History
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div
+                class="card p-4 border border-white/20 rounded-lg bg-[#2c2c39]"
+              >
+                <div class="relative">
+                  <div
+                    class="flex items-center gap-1 bg-white text-slate-800/80 w-fit p-1 rounded-md text-xs font-bold absolute top-4 right-4 cursor-pointer"
+                  >
+                    <svg
+                      width="14"
+                      height="14"
+                      viewBox="0 0 14 14"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M6.99999 11.8709L6.15416 11.1009C3.14999 8.37675 1.16666 6.57425 1.16666 4.37508C1.16666 2.57258 2.57832 1.16675 4.37499 1.16675C5.38999 1.16675 6.36416 1.63925 6.99999 2.38008C7.63582 1.63925 8.60999 1.16675 9.62499 1.16675C11.4217 1.16675 12.8333 2.57258 12.8333 4.37508C12.8333 6.57425 10.85 8.37675 7.84582 11.1009L6.99999 11.8709Z"
+                        fill="#F85486"
+                      ></path>
+                    </svg>
+                    100
+                  </div>
+                  <img class="w-full" src="imgs/picks/image-03.svg" alt="..." />
+                </div>
+                <div class="body mt-4">
+                  <h4
+                    class="font-bold text-lg w-fit tracking-wide trnasition-all hover:text-indigo-700 cursor-pointer"
+                  >
+                    3d abstract illustration
+                  </h4>
+                  <div class="flex items-center justify-between mt-3">
+                    <div class="flex items-center gap-2">
+                      <img src="imgs/picks/creator-03.png" alt=".." />
+                      <div>
+                        <span class="block text-xs font-bold"
+                          >@Devid_Meth...</span
+                        >
+                        <span class="block text-xs font-bold text-zinc-400"
+                          >creator</span
+                        >
+                      </div>
+                    </div>
+                    <div class="text-right">
+                      <span class="block text-xs font-bold">1.58 ETH</span>
+                      <span class="block text-xs font-bold text-zinc-400"
+                        >Current Bit</span
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="foot pt-5 pb-1 border-t mt-5 border-white/40 flex items-center justify-between"
+                >
+                  <a
+                    class="p-2 px-3 rounded-md bg-indigo-600 text-sm font-bold transition-all hover:bg-indigo-700"
+                    href="#"
+                    >Place Bid</a
+                  >
+                  <a
+                    class="flex items-center gap-1 text-base hover:text-indigo-700"
+                    href="#"
+                  >
+                    <svg
+                      width="18"
+                      height="18"
+                      viewBox="0 0 18 18"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M9 4.5V6.75L12 3.75L9 0.75V3C7.4087 3 5.88258 3.63214 4.75736 4.75736C3.63214 5.88258 3 7.4087 3 9C3 10.1775 3.345 11.2725 3.93 12.195L5.025 11.1C4.6875 10.4775 4.5 9.75 4.5 9C4.5 7.80653 4.97411 6.66193 5.81802 5.81802C6.66193 4.97411 7.80652 4.5 9 4.5ZM14.07 5.805L12.975 6.9C13.305 7.53 13.5 8.25 13.5 9C13.5 10.1935 13.0259 11.3381 12.182 12.182C11.3381 13.0259 10.1935 13.5 9 13.5V11.25L6 14.25L9 17.25V15C10.5913 15 12.1174 14.3679 13.2426 13.2426C14.3679 12.1174 15 10.5913 15 9C15 7.8225 14.655 6.7275 14.07 5.805Z"
+                        fill="currentColor"
+                      ></path>
+                    </svg>
+                    View History
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div
+                class="card p-4 border border-white/20 rounded-lg bg-[#2c2c39]"
+              >
+                <div class="relative">
+                  <div
+                    class="flex items-center gap-1 bg-white text-slate-800/80 w-fit p-1 rounded-md text-xs font-bold absolute top-4 right-4 cursor-pointer"
+                  >
+                    <svg
+                      width="14"
+                      height="14"
+                      viewBox="0 0 14 14"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M6.99999 11.8709L6.15416 11.1009C3.14999 8.37675 1.16666 6.57425 1.16666 4.37508C1.16666 2.57258 2.57832 1.16675 4.37499 1.16675C5.38999 1.16675 6.36416 1.63925 6.99999 2.38008C7.63582 1.63925 8.60999 1.16675 9.62499 1.16675C11.4217 1.16675 12.8333 2.57258 12.8333 4.37508C12.8333 6.57425 10.85 8.37675 7.84582 11.1009L6.99999 11.8709Z"
+                        fill="#F85486"
+                      ></path>
+                    </svg>
+                    2.5K
+                  </div>
+                  <img class="w-full" src="imgs/picks/image-04.svg" alt="..." />
+                </div>
+                <div class="body mt-4">
+                  <h4
+                    class="font-bold text-lg w-fit tracking-wide trnasition-all hover:text-indigo-700 cursor-pointer"
+                  >
+                    3d abstract illustration
+                  </h4>
+                  <div class="flex items-center justify-between mt-3">
+                    <div class="flex items-center gap-2">
+                      <img src="imgs/picks/creator-04.png" alt=".." />
+                      <div>
+                        <span class="block text-xs font-bold"
+                          >@Devid_Meth...</span
+                        >
+                        <span class="block text-xs font-bold text-zinc-400"
+                          >creator</span
+                        >
+                      </div>
+                    </div>
+                    <div class="text-right">
+                      <span class="block text-xs font-bold">1.58 ETH</span>
+                      <span class="block text-xs font-bold text-zinc-400"
+                        >Current Bit</span
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="foot pt-5 pb-1 border-t mt-5 border-white/40 flex items-center justify-between"
+                >
+                  <a
+                    class="p-2 px-3 rounded-md bg-indigo-600 text-sm font-bold transition-all hover:bg-indigo-700"
+                    href="#"
+                    >Place Bid</a
+                  >
+                  <a
+                    class="flex items-center gap-1 text-base hover:text-indigo-700"
+                    href="#"
+                  >
+                    <svg
+                      width="18"
+                      height="18"
+                      viewBox="0 0 18 18"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M9 4.5V6.75L12 3.75L9 0.75V3C7.4087 3 5.88258 3.63214 4.75736 4.75736C3.63214 5.88258 3 7.4087 3 9C3 10.1775 3.345 11.2725 3.93 12.195L5.025 11.1C4.6875 10.4775 4.5 9.75 4.5 9C4.5 7.80653 4.97411 6.66193 5.81802 5.81802C6.66193 4.97411 7.80652 4.5 9 4.5ZM14.07 5.805L12.975 6.9C13.305 7.53 13.5 8.25 13.5 9C13.5 10.1935 13.0259 11.3381 12.182 12.182C11.3381 13.0259 10.1935 13.5 9 13.5V11.25L6 14.25L9 17.25V15C10.5913 15 12.1174 14.3679 13.2426 13.2426C14.3679 12.1174 15 10.5913 15 9C15 7.8225 14.655 6.7275 14.07 5.805Z"
+                        fill="currentColor"
+                      ></path>
+                    </svg>
+                    View History
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div
+                class="card p-4 border border-white/20 rounded-lg bg-[#2c2c39]"
+              >
+                <div class="relative">
+                  <div
+                    class="flex items-center gap-1 bg-white text-slate-800/80 w-fit p-1 rounded-md text-xs font-bold absolute top-4 right-4 cursor-pointer"
+                  >
+                    <svg
+                      width="14"
+                      height="14"
+                      viewBox="0 0 14 14"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M6.99999 11.8709L6.15416 11.1009C3.14999 8.37675 1.16666 6.57425 1.16666 4.37508C1.16666 2.57258 2.57832 1.16675 4.37499 1.16675C5.38999 1.16675 6.36416 1.63925 6.99999 2.38008C7.63582 1.63925 8.60999 1.16675 9.62499 1.16675C11.4217 1.16675 12.8333 2.57258 12.8333 4.37508C12.8333 6.57425 10.85 8.37675 7.84582 11.1009L6.99999 11.8709Z"
+                        fill="#F85486"
+                      ></path>
+                    </svg>
+                    1.5K
+                  </div>
+                  <img class="w-full" src="imgs/picks/image-05.svg" alt="..." />
+                </div>
+                <div class="body mt-4">
+                  <h4
+                    class="font-bold text-lg w-fit tracking-wide trnasition-all hover:text-indigo-700 cursor-pointer"
+                  >
+                    3d abstract illustration
+                  </h4>
+                  <div class="flex items-center justify-between mt-3">
+                    <div class="flex items-center gap-2">
+                      <img src="imgs/picks/creator-05.png" alt=".." />
+                      <div>
+                        <span class="block text-xs font-bold"
+                          >@Devid_Meth...</span
+                        >
+                        <span class="block text-xs font-bold text-zinc-400"
+                          >creator</span
+                        >
+                      </div>
+                    </div>
+                    <div class="text-right">
+                      <span class="block text-xs font-bold">1.58 ETH</span>
+                      <span class="block text-xs font-bold text-zinc-400"
+                        >Current Bit</span
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="foot pt-5 pb-1 border-t mt-5 border-white/40 flex items-center justify-between"
+                >
+                  <a
+                    class="p-2 px-3 rounded-md bg-indigo-600 text-sm font-bold transition-all hover:bg-indigo-700"
+                    href="#"
+                    >Place Bid</a
+                  >
+                  <a
+                    class="flex items-center gap-1 text-base hover:text-indigo-700"
+                    href="#"
+                  >
+                    <svg
+                      width="18"
+                      height="18"
+                      viewBox="0 0 18 18"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M9 4.5V6.75L12 3.75L9 0.75V3C7.4087 3 5.88258 3.63214 4.75736 4.75736C3.63214 5.88258 3 7.4087 3 9C3 10.1775 3.345 11.2725 3.93 12.195L5.025 11.1C4.6875 10.4775 4.5 9.75 4.5 9C4.5 7.80653 4.97411 6.66193 5.81802 5.81802C6.66193 4.97411 7.80652 4.5 9 4.5ZM14.07 5.805L12.975 6.9C13.305 7.53 13.5 8.25 13.5 9C13.5 10.1935 13.0259 11.3381 12.182 12.182C11.3381 13.0259 10.1935 13.5 9 13.5V11.25L6 14.25L9 17.25V15C10.5913 15 12.1174 14.3679 13.2426 13.2426C14.3679 12.1174 15 10.5913 15 9C15 7.8225 14.655 6.7275 14.07 5.805Z"
+                        fill="currentColor"
+                      ></path>
+                    </svg>
+                    View History
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div
+                class="card p-4 border border-white/20 rounded-lg bg-[#2c2c39]"
+              >
+                <div class="relative">
+                  <div
+                    class="flex items-center gap-1 bg-white text-slate-800/80 w-fit p-1 rounded-md text-xs font-bold absolute top-4 right-4 cursor-pointer"
+                  >
+                    <svg
+                      width="14"
+                      height="14"
+                      viewBox="0 0 14 14"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M6.99999 11.8709L6.15416 11.1009C3.14999 8.37675 1.16666 6.57425 1.16666 4.37508C1.16666 2.57258 2.57832 1.16675 4.37499 1.16675C5.38999 1.16675 6.36416 1.63925 6.99999 2.38008C7.63582 1.63925 8.60999 1.16675 9.62499 1.16675C11.4217 1.16675 12.8333 2.57258 12.8333 4.37508C12.8333 6.57425 10.85 8.37675 7.84582 11.1009L6.99999 11.8709Z"
+                        fill="#F85486"
+                      ></path>
+                    </svg>
+                    6.5K
+                  </div>
+                  <img class="w-full" src="imgs/picks/image-06.svg" alt="..." />
+                </div>
+                <div class="body mt-4">
+                  <h4
+                    class="font-bold text-lg w-fit tracking-wide trnasition-all hover:text-indigo-700 cursor-pointer"
+                  >
+                    3d abstract illustration
+                  </h4>
+                  <div class="flex items-center justify-between mt-3">
+                    <div class="flex items-center gap-2">
+                      <img src="imgs/picks/creator-06.png" alt=".." />
+                      <div>
+                        <span class="block text-xs font-bold"
+                          >@Devid_Meth...</span
+                        >
+                        <span class="block text-xs font-bold text-zinc-400"
+                          >creator</span
+                        >
+                      </div>
+                    </div>
+                    <div class="text-right">
+                      <span class="block text-xs font-bold">1.58 ETH</span>
+                      <span class="block text-xs font-bold text-zinc-400"
+                        >Current Bit</span
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="foot pt-5 pb-1 border-t mt-5 border-white/40 flex items-center justify-between"
+                >
+                  <a
+                    class="p-2 px-3 rounded-md bg-indigo-600 text-sm font-bold transition-all hover:bg-indigo-700"
+                    href="#"
+                    >Place Bid</a
+                  >
+                  <a
+                    class="flex items-center gap-1 text-base hover:text-indigo-700"
+                    href="#"
+                  >
+                    <svg
+                      width="18"
+                      height="18"
+                      viewBox="0 0 18 18"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M9 4.5V6.75L12 3.75L9 0.75V3C7.4087 3 5.88258 3.63214 4.75736 4.75736C3.63214 5.88258 3 7.4087 3 9C3 10.1775 3.345 11.2725 3.93 12.195L5.025 11.1C4.6875 10.4775 4.5 9.75 4.5 9C4.5 7.80653 4.97411 6.66193 5.81802 5.81802C6.66193 4.97411 7.80652 4.5 9 4.5ZM14.07 5.805L12.975 6.9C13.305 7.53 13.5 8.25 13.5 9C13.5 10.1935 13.0259 11.3381 12.182 12.182C11.3381 13.0259 10.1935 13.5 9 13.5V11.25L6 14.25L9 17.25V15C10.5913 15 12.1174 14.3679 13.2426 13.2426C14.3679 12.1174 15 10.5913 15 9C15 7.8225 14.655 6.7275 14.07 5.805Z"
+                        fill="currentColor"
+                      ></path>
+                    </svg>
+                    View History
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div
+                class="card p-4 border border-white/20 rounded-lg bg-[#2c2c39]"
+              >
+                <div class="relative">
+                  <div
+                    class="flex items-center gap-1 bg-white text-slate-800/80 w-fit p-1 rounded-md text-xs font-bold absolute top-4 right-4 cursor-pointer"
+                  >
+                    <svg
+                      width="14"
+                      height="14"
+                      viewBox="0 0 14 14"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M6.99999 11.8709L6.15416 11.1009C3.14999 8.37675 1.16666 6.57425 1.16666 4.37508C1.16666 2.57258 2.57832 1.16675 4.37499 1.16675C5.38999 1.16675 6.36416 1.63925 6.99999 2.38008C7.63582 1.63925 8.60999 1.16675 9.62499 1.16675C11.4217 1.16675 12.8333 2.57258 12.8333 4.37508C12.8333 6.57425 10.85 8.37675 7.84582 11.1009L6.99999 11.8709Z"
+                        fill="#F85486"
+                      ></path>
+                    </svg>
+                    1K
+                  </div>
+                  <img class="w-full" src="imgs/picks/image-07.svg" alt="..." />
+                </div>
+                <div class="body mt-4">
+                  <h4
+                    class="font-bold text-lg w-fit tracking-wide trnasition-all hover:text-indigo-700 cursor-pointer"
+                  >
+                    3d abstract illustration
+                  </h4>
+                  <div class="flex items-center justify-between mt-3">
+                    <div class="flex items-center gap-2">
+                      <img src="imgs/picks/creator-07.png" alt=".." />
+                      <div>
+                        <span class="block text-xs font-bold"
+                          >@Devid_Meth...</span
+                        >
+                        <span class="block text-xs font-bold text-zinc-400"
+                          >creator</span
+                        >
+                      </div>
+                    </div>
+                    <div class="text-right">
+                      <span class="block text-xs font-bold">1.58 ETH</span>
+                      <span class="block text-xs font-bold text-zinc-400"
+                        >Current Bit</span
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="foot pt-5 pb-1 border-t mt-5 border-white/40 flex items-center justify-between"
+                >
+                  <a
+                    class="p-2 px-3 rounded-md bg-indigo-600 text-sm font-bold transition-all hover:bg-indigo-700"
+                    href="#"
+                    >Place Bid</a
+                  >
+                  <a
+                    class="flex items-center gap-1 text-base hover:text-indigo-700"
+                    href="#"
+                  >
+                    <svg
+                      width="18"
+                      height="18"
+                      viewBox="0 0 18 18"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M9 4.5V6.75L12 3.75L9 0.75V3C7.4087 3 5.88258 3.63214 4.75736 4.75736C3.63214 5.88258 3 7.4087 3 9C3 10.1775 3.345 11.2725 3.93 12.195L5.025 11.1C4.6875 10.4775 4.5 9.75 4.5 9C4.5 7.80653 4.97411 6.66193 5.81802 5.81802C6.66193 4.97411 7.80652 4.5 9 4.5ZM14.07 5.805L12.975 6.9C13.305 7.53 13.5 8.25 13.5 9C13.5 10.1935 13.0259 11.3381 12.182 12.182C11.3381 13.0259 10.1935 13.5 9 13.5V11.25L6 14.25L9 17.25V15C10.5913 15 12.1174 14.3679 13.2426 13.2426C14.3679 12.1174 15 10.5913 15 9C15 7.8225 14.655 6.7275 14.07 5.805Z"
+                        fill="currentColor"
+                      ></path>
+                    </svg>
+                    View History
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div
+                class="card p-4 border border-white/20 rounded-lg bg-[#2c2c39]"
+              >
+                <div class="relative">
+                  <div
+                    class="flex items-center gap-1 bg-white text-slate-800/80 w-fit p-1 rounded-md text-xs font-bold absolute top-4 right-4 cursor-pointer"
+                  >
+                    <svg
+                      width="14"
+                      height="14"
+                      viewBox="0 0 14 14"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M6.99999 11.8709L6.15416 11.1009C3.14999 8.37675 1.16666 6.57425 1.16666 4.37508C1.16666 2.57258 2.57832 1.16675 4.37499 1.16675C5.38999 1.16675 6.36416 1.63925 6.99999 2.38008C7.63582 1.63925 8.60999 1.16675 9.62499 1.16675C11.4217 1.16675 12.8333 2.57258 12.8333 4.37508C12.8333 6.57425 10.85 8.37675 7.84582 11.1009L6.99999 11.8709Z"
+                        fill="#F85486"
+                      ></path>
+                    </svg>
+                    2.2K
+                  </div>
+                  <img class="w-full" src="imgs/picks/image-08.svg" alt="..." />
+                </div>
+                <div class="body mt-4">
+                  <h4
+                    class="font-bold text-lg w-fit tracking-wide trnasition-all hover:text-indigo-700 cursor-pointer"
+                  >
+                    3d abstract illustration
+                  </h4>
+                  <div class="flex items-center justify-between mt-3">
+                    <div class="flex items-center gap-2">
+                      <img src="imgs/picks/creator-08.png" alt=".." />
+                      <div>
+                        <span class="block text-xs font-bold"
+                          >@Devid_Meth...</span
+                        >
+                        <span class="block text-xs font-bold text-zinc-400"
+                          >creator</span
+                        >
+                      </div>
+                    </div>
+                    <div class="text-right">
+                      <span class="block text-xs font-bold">1.58 ETH</span>
+                      <span class="block text-xs font-bold text-zinc-400"
+                        >Current Bit</span
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="foot pt-5 pb-1 border-t mt-5 border-white/40 flex items-center justify-between"
+                >
+                  <a
+                    class="p-2 px-3 rounded-md bg-indigo-600 text-sm font-bold transition-all hover:bg-indigo-700"
+                    href="#"
+                    >Place Bid</a
+                  >
+                  <a
+                    class="flex items-center gap-1 text-base hover:text-indigo-700"
+                    href="#"
+                  >
+                    <svg
+                      width="18"
+                      height="18"
+                      viewBox="0 0 18 18"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M9 4.5V6.75L12 3.75L9 0.75V3C7.4087 3 5.88258 3.63214 4.75736 4.75736C3.63214 5.88258 3 7.4087 3 9C3 10.1775 3.345 11.2725 3.93 12.195L5.025 11.1C4.6875 10.4775 4.5 9.75 4.5 9C4.5 7.80653 4.97411 6.66193 5.81802 5.81802C6.66193 4.97411 7.80652 4.5 9 4.5ZM14.07 5.805L12.975 6.9C13.305 7.53 13.5 8.25 13.5 9C13.5 10.1935 13.0259 11.3381 12.182 12.182C11.3381 13.0259 10.1935 13.5 9 13.5V11.25L6 14.25L9 17.25V15C10.5913 15 12.1174 14.3679 13.2426 13.2426C14.3679 12.1174 15 10.5913 15 9C15 7.8225 14.655 6.7275 14.07 5.805Z"
+                        fill="currentColor"
+                      ></path>
+                    </svg>
+                    View History
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a
+            class="block w-fit mx-auto border-2 border-white font-bold p-2 px-5 rounded-md mt-16 transition-all hover:bg-indigo-700 hover:border-indigo-700"
+            href="#"
+            >Load More...</a
+          >
+        </div>
+      </section>
+      <section class="mt-16">
+        <div class="container mx-auto px-5">
+          <h2 class="text-center text-4xl font-bold">Core Features</h2>
+          <p class="text-center max-w-lg mx-auto text-white/60 mt-3 text-base">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam a
+            lacinia dolor, in pretium nunc. Morbi mollis arcu eget.
+          </p>
+          <div
+            class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-8 gap-y-9 mt-12"
+          >
+            <div
+              class="card transition-all group hover:bg-white border border-white/20 p-5 rounded-lg bg-[#2c2c39]"
+            >
+              <div class="bg-red-100 rounded-full w-fit p-4">
+                <svg
+                  width="34"
+                  height="34"
+                  viewBox="0 0 34 34"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M29.75 25.5V26.9167C29.75 27.6681 29.4515 28.3888 28.9201 28.9201C28.3888 29.4515 27.6681 29.75 26.9167 29.75H7.08333C5.51083 29.75 4.25 28.475 4.25 26.9167V7.08333C4.25 6.33189 4.54851 5.61122 5.07986 5.07986C5.61122 4.54851 6.33189 4.25 7.08333 4.25H26.9167C27.6681 4.25 28.3888 4.54851 28.9201 5.07986C29.4515 5.61122 29.75 6.33189 29.75 7.08333V8.5H17C15.4275 8.5 14.1667 9.775 14.1667 11.3333V22.6667C14.1667 23.4181 14.4652 24.1388 14.9965 24.6701C15.5279 25.2015 16.2486 25.5 17 25.5H29.75ZM17 22.6667H31.1667V11.3333H17V22.6667ZM22.6667 19.125C22.1031 19.125 21.5626 18.9011 21.1641 18.5026C20.7656 18.1041 20.5417 17.5636 20.5417 17C20.5417 16.4364 20.7656 15.8959 21.1641 15.4974C21.5626 15.0989 22.1031 14.875 22.6667 14.875C23.2303 14.875 23.7708 15.0989 24.1693 15.4974C24.5678 15.8959 24.7917 16.4364 24.7917 17C24.7917 17.5636 24.5678 18.1041 24.1693 18.5026C23.7708 18.9011 23.2303 19.125 22.6667 19.125Z"
+                    fill="#FF766A"
+                  ></path>
+                </svg>
+              </div>
+              <h3 class="font-bold group-hover:text-black mt-4 text-xl">
+                Set Up Your Wallet
+              </h3>
+              <p class="text-white/50 mt-2 group-hover:text-black/60">
+                Lorem ipsum dolor sit amet consectetur smit.
+              </p>
+            </div>
+            <div
+              class="card transition-all group hover:bg-white border border-white/20 p-5 rounded-lg bg-[#2c2c39]"
+            >
+              <div class="bg-yellow-100 rounded-full w-fit p-4">
+                <svg
+                  width="34"
+                  height="34"
+                  viewBox="0 0 34 34"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M4.25 15.5833H15.5833V4.25H4.25V15.5833ZM4.25 29.75H15.5833V18.4167H4.25V29.75ZM18.4167 29.75H29.75V18.4167H18.4167V29.75ZM18.4167 4.25V15.5833H29.75V4.25"
+                    fill="#F5B70A"
+                  ></path>
+                </svg>
+              </div>
+              <h3 class="font-bold group-hover:text-black mt-4 text-xl">
+                Set Up Your Wallet
+              </h3>
+              <p class="text-white/50 mt-2 group-hover:text-black/60">
+                Lorem ipsum dolor sit amet consectetur smit.
+              </p>
+            </div>
+            <div
+              class="card transition-all group hover:bg-white border border-white/20 p-5 rounded-lg bg-[#2c2c39]"
+            >
+              <div class="bg-green-100 rounded-full w-fit p-4">
+                <svg
+                  width="34"
+                  height="34"
+                  viewBox="0 0 34 34"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12.0417 19.125L15.5833 23.375L20.5417 17L26.9167 25.5H7.08333L12.0417 19.125ZM29.75 26.9167V7.08333C29.75 5.51083 28.475 4.25 26.9167 4.25H7.08333C6.33189 4.25 5.61122 4.54851 5.07986 5.07986C4.54851 5.61122 4.25 6.33189 4.25 7.08333V26.9167C4.25 27.6681 4.54851 28.3888 5.07986 28.9201C5.61122 29.4515 6.33189 29.75 7.08333 29.75H26.9167C27.6681 29.75 28.3888 29.4515 28.9201 28.9201C29.4515 28.3888 29.75 27.6681 29.75 26.9167Z"
+                    fill="#06DE90"
+                  ></path>
+                </svg>
+              </div>
+              <h3 class="font-bold group-hover:text-black mt-4 text-xl">
+                Set Up Your Wallet
+              </h3>
+              <p class="text-white/50 mt-2 group-hover:text-black/60">
+                Lorem ipsum dolor sit amet consectetur smit.
+              </p>
+            </div>
+            <div
+              class="card transition-all group hover:bg-white border border-white/20 p-5 rounded-lg bg-[#2c2c39]"
+            >
+              <div class="bg-blue-100 rounded-full w-fit p-4">
+                <svg
+                  width="34"
+                  height="34"
+                  viewBox="0 0 34 34"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M7.79168 9.91671C7.22809 9.91671 6.68759 9.69282 6.28907 9.29431C5.89056 8.89579 5.66668 8.35529 5.66668 7.79171C5.66668 7.22812 5.89056 6.68762 6.28907 6.28911C6.68759 5.89059 7.22809 5.66671 7.79168 5.66671C8.35526 5.66671 8.89576 5.89059 9.29428 6.28911C9.69279 6.68762 9.91668 7.22812 9.91668 7.79171C9.91668 8.35529 9.69279 8.89579 9.29428 9.29431C8.89576 9.69282 8.35526 9.91671 7.79168 9.91671ZM30.3308 16.405L17.5808 3.65504C17.0708 3.14504 16.3625 2.83337 15.5833 2.83337H5.66668C4.09418 2.83337 2.83334 4.09421 2.83334 5.66671V15.5834C2.83334 16.3625 3.14501 17.0709 3.66918 17.5809L16.405 30.3309C16.9292 30.8409 17.6375 31.1667 18.4167 31.1667C19.1958 31.1667 19.9042 30.8409 20.4142 30.3309L30.3308 20.4142C30.855 19.9042 31.1667 19.1959 31.1667 18.4167C31.1667 17.6234 30.8408 16.915 30.3308 16.405Z"
+                    fill="#5142FC"
+                  ></path>
+                </svg>
+              </div>
+              <h3 class="font-bold group-hover:text-black mt-4 text-xl">
+                Set Up Your Wallet
+              </h3>
+              <p class="text-white/50 mt-2 group-hover:text-black/60">
+                Lorem ipsum dolor sit amet consectetur smit.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="mt-10">
+        <div class="container mx-auto px-5">
+          <div
+            class="border-b border-white/10 pb-4 flex items-center justify-between pt-5"
+          >
+            <h2 class="font-bold text-3xl">Popular Collection</h2>
+            <a
+              class="bg-indigo-600 py-2 px-4 font-bold transition-all hover:bg-indigo-700 rounded-md hidden min-[500px]:block text-base"
+              href="#"
+              >Explore More</a
+            >
+          </div>
+          <div class="grid lg:grid-cols-2 gap-10 mt-10">
+            <div class="border border-white/20 p-5 rounded-lg bg-[#2c2c39]">
+              <div class="image flex items-start gap-6">
+                <div class="flex-1 basis-[95%]">
+                  <img
+                    class="w-full"
+                    src="imgs/collictions/image-01.svg"
+                    alt=""
+                  />
+                </div>
+                <div class="space-y-5">
+                  <img src="imgs/collictions/image-02.svg" alt="" />
+                  <img src="imgs/collictions/image-04.svg" alt="" />
+                </div>
+              </div>
+              <div class="flex items-center justify-between mt-5">
+                <h4 class="font-bold text-xl">Creative 3d illustration</h4>
+
+                <div
+                  class="flex items-center gap-1 bg-white text-slate-800/80 w-fit p-1 rounded-md text-xs font-bold cursor-pointer"
+                >
+                  <svg
+                    width="14"
+                    height="14"
+                    viewBox="0 0 14 14"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M6.99999 11.8709L6.15416 11.1009C3.14999 8.37675 1.16666 6.57425 1.16666 4.37508C1.16666 2.57258 2.57832 1.16675 4.37499 1.16675C5.38999 1.16675 6.36416 1.63925 6.99999 2.38008C7.63582 1.63925 8.60999 1.16675 9.62499 1.16675C11.4217 1.16675 12.8333 2.57258 12.8333 4.37508C12.8333 6.57425 10.85 8.37675 7.84582 11.1009L6.99999 11.8709Z"
+                      fill="#F85486"
+                    ></path>
+                  </svg>
+                  1.6K
+                </div>
+              </div>
+              <div class="mt-3 flex items-center gap-3">
+                <img
+                  class="rounded-md"
+                  src="imgs/collictions/creator-01.jpg"
+                  alt=""
+                />
+                <div>
+                  <span class="block font-bold">@Lathium_Lui...</span>
+                  <span class="block text-sm text-white/50">Creator</span>
+                </div>
+              </div>
+            </div>
+            <div class="border border-white/20 p-5 rounded-lg bg-[#2c2c39]">
+              <div class="image flex gap-5">
+                <div class="basis-[35%]">
+                  <img
+                    class="w-full"
+                    src="imgs/collictions/image-03.svg"
+                    alt=""
+                  />
+                </div>
+                <div class="flex flex-col gap-5">
+                  <div class="flex gap-5">
+                    <img
+                      class="w-20 sm:w-32"
+                      src="imgs/collictions/image-05.svg"
+                      alt=""
+                    />
+                    <img
+                      class="w-20 sm:w-32"
+                      src="imgs/collictions/image-06.svg"
+                      alt=""
+                    />
+                  </div>
+                  <div>
+                    <img src="imgs/collictions/image-07.svg" alt="" />
+                  </div>
+                </div>
+              </div>
+              <div class="flex items-center justify-between mt-5">
+                <h4 class="font-bold text-xl">Creative 3d illustration</h4>
+
+                <div
+                  class="flex items-center gap-1 bg-white text-slate-800/80 w-fit p-1 rounded-md text-xs font-bold cursor-pointer"
+                >
+                  <svg
+                    width="14"
+                    height="14"
+                    viewBox="0 0 14 14"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M6.99999 11.8709L6.15416 11.1009C3.14999 8.37675 1.16666 6.57425 1.16666 4.37508C1.16666 2.57258 2.57832 1.16675 4.37499 1.16675C5.38999 1.16675 6.36416 1.63925 6.99999 2.38008C7.63582 1.63925 8.60999 1.16675 9.62499 1.16675C11.4217 1.16675 12.8333 2.57258 12.8333 4.37508C12.8333 6.57425 10.85 8.37675 7.84582 11.1009L6.99999 11.8709Z"
+                      fill="#F85486"
+                    ></path>
+                  </svg>
+                  3.6K
+                </div>
+              </div>
+              <div class="mt-3 flex items-center gap-3">
+                <img
+                  class="rounded-md"
+                  src="imgs/collictions/creator-01.jpg"
+                  alt=""
+                />
+                <div>
+                  <span class="block font-bold">@Lathium_Lui...</span>
+                  <span class="block text-sm text-white/50">Creator</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="mt-14 bg-[#2c2c39] text-white">
+      <div class="container mx-auto px-5 pt-16">
+        <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
+          <div>
+            <img src="imgs/logo.svg" alt="" />
+            <p class="text-white/60 mt-8">
+              Lorem ipsum dolor amet consectetur adipiscing elit do eiusmod
+              tempor incididunt ut labore et dolore.
+            </p>
+            <div class="social flex items-center gap-4 mt-5">
+              <a class="" href="#">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  class="fill-white transition-all hover:fill-indigo-700"
+                >
+                  <path
+                    d="M12 2.04C6.5 2.04 2 6.53 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.85C10.44 7.34 11.93 5.96 14.22 5.96C15.31 5.96 16.45 6.15 16.45 6.15V8.62H15.19C13.95 8.62 13.56 9.39 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96C15.9164 21.5878 18.0622 20.3855 19.6099 18.5701C21.1576 16.7546 22.0054 14.4456 22 12.06C22 6.53 17.5 2.04 12 2.04Z"
+                  ></path>
+                </svg>
+              </a>
+              <a class="" href="#">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  class="fill-white transition-all hover:fill-indigo-700"
+                >
+                  <path
+                    d="M22.46 6C21.69 6.35 20.86 6.58 20 6.69C20.88 6.16 21.56 5.32 21.88 4.31C21.05 4.81 20.13 5.16 19.16 5.36C18.37 4.5 17.26 4 16 4C13.65 4 11.73 5.92 11.73 8.29C11.73 8.63 11.77 8.96 11.84 9.27C8.27998 9.09 5.10998 7.38 2.99998 4.79C2.62998 5.42 2.41998 6.16 2.41998 6.94C2.41998 8.43 3.16998 9.75 4.32998 10.5C3.61998 10.5 2.95998 10.3 2.37998 10C2.37998 10 2.37998 10 2.37998 10.03C2.37998 12.11 3.85998 13.85 5.81998 14.24C5.45998 14.34 5.07998 14.39 4.68998 14.39C4.41998 14.39 4.14998 14.36 3.88998 14.31C4.42998 16 5.99998 17.26 7.88998 17.29C6.42998 18.45 4.57998 19.13 2.55998 19.13C2.21998 19.13 1.87998 19.11 1.53998 19.07C3.43998 20.29 5.69998 21 8.11998 21C16 21 20.33 14.46 20.33 8.79C20.33 8.6 20.33 8.42 20.32 8.23C21.16 7.63 21.88 6.87 22.46 6Z"
+                  ></path>
+                </svg>
+              </a>
+              <a class="" href="#">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  class="fill-white transition-all hover:fill-indigo-700"
+                >
+                  <path
+                    d="M19 3C19.5304 3 20.0391 3.21071 20.4142 3.58579C20.7893 3.96086 21 4.46957 21 5V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H19ZM18.5 18.5V13.2C18.5 12.3354 18.1565 11.5062 17.5452 10.8948C16.9338 10.2835 16.1046 9.94 15.24 9.94C14.39 9.94 13.4 10.46 12.92 11.24V10.13H10.13V18.5H12.92V13.57C12.92 12.8 13.54 12.17 14.31 12.17C14.6813 12.17 15.0374 12.3175 15.2999 12.5801C15.5625 12.8426 15.71 13.1987 15.71 13.57V18.5H18.5ZM6.88 8.56C7.32556 8.56 7.75288 8.383 8.06794 8.06794C8.383 7.75288 8.56 7.32556 8.56 6.88C8.56 5.95 7.81 5.19 6.88 5.19C6.43178 5.19 6.00193 5.36805 5.68499 5.68499C5.36805 6.00193 5.19 6.43178 5.19 6.88C5.19 7.81 5.95 8.56 6.88 8.56ZM8.27 18.5V10.13H5.5V18.5H8.27Z"
+                  ></path>
+                </svg>
+              </a>
+              <a class="" href="#">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  class="fill-white transition-all hover:fill-indigo-700"
+                >
+                  <path
+                    d="M10 15L15.19 12L10 9V15ZM21.56 7.17C21.69 7.64 21.78 8.27 21.84 9.07C21.91 9.87 21.94 10.56 21.94 11.16L22 12C22 14.19 21.84 15.8 21.56 16.83C21.31 17.73 20.73 18.31 19.83 18.56C19.36 18.69 18.5 18.78 17.18 18.84C15.88 18.91 14.69 18.94 13.59 18.94L12 19C7.81 19 5.2 18.84 4.17 18.56C3.27 18.31 2.69 17.73 2.44 16.83C2.31 16.36 2.22 15.73 2.16 14.93C2.09 14.13 2.06 13.44 2.06 12.84L2 12C2 9.81 2.16 8.2 2.44 7.17C2.69 6.27 3.27 5.69 4.17 5.44C4.64 5.31 5.5 5.22 6.82 5.16C8.12 5.09 9.31 5.06 10.41 5.06L12 5C16.19 5 18.8 5.16 19.83 5.44C20.73 5.69 21.31 6.27 21.56 7.17Z"
+                  ></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div>
+            <div>
+              <h3 class="text-2xl font-bold mb-8">Company</h3>
+              <ul class="space-y-3">
+                <li>
+                  <a
+                    class="text-white/60 transition-all hover:text-white"
+                    href="#"
+                    >Client support</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="text-white/60 transition-all hover:text-white"
+                    href="#"
+                    >Latest news</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="text-white/60 transition-all hover:text-white"
+                    href="#"
+                    >Company Details</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="text-white/60 transition-all hover:text-white"
+                    href="#"
+                    >Who we are</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-2xl font-bold mb-8">Customer</h3>
+            <ul class="space-y-3">
+              <li>
+                <a
+                  class="text-white/60 transition-all hover:text-white"
+                  href="#"
+                  >About company</a
+                >
+              </li>
+              <li>
+                <a
+                  class="text-white/60 transition-all hover:text-white"
+                  href="#"
+                  >Company services</a
+                >
+              </li>
+              <li>
+                <a
+                  class="text-white/60 transition-all hover:text-white"
+                  href="#"
+                  >Job opportunities</a
+                >
+              </li>
+              <li>
+                <a
+                  class="text-white/60 transition-all hover:text-white"
+                  href="#"
+                  >Contact us</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-2xl font-bold mb-8">Subscribe Now</h3>
+            <p class="text-white/60">
+              Enter your email address for receiving valuable newsletters.
+            </p>
+            <form class="relative" action="">
+              <input
+                class="border border-white/20 p-2 px-3 text-sm w-full rounded-md bg-transparent outline-none"
+                type="text"
+                placeholder="Enter yout email address"
+              />
+              <button
+                class="bg-indigo-600 p-2 rounded-md absolute right-px top-px transition-all hover:bg-indigo-700"
+                type="submit"
+              >
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  class="fill-white"
+                >
+                  <path
+                    d="M1.66669 17.5L19.1667 10L1.66669 2.5V8.33333L14.1667 10L1.66669 11.6667V17.5Z"
+                  ></path>
+                </svg>
+              </button>
+            </form>
+          </div>
+        </div>
+        <div
+          class="copyright text-white/60 text-center pt-5 pb-5 text-base mt-14 border-t border-white/30"
+        >
+          <p>© Copyright 2025 - NFT, All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script>
+      let header = document.querySelector("#header");
+      window.onscroll = function () {
+        this.scrollY >= 20
+          ? header.classList.add("bg-slate-900/60", "py-3", "backdrop-blur-md")
+          : header.classList.remove(
+              "bg-slate-900/60",
+              "py-3",
+              "backdrop-blur-md"
+            );
+      };
+
+      const swiper = new Swiper(".swiper", {
+        loop: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        speed: 1000,
+        autoplay: true,
+        parallax: true,
+        grabCursor: true,
+
+        slidesPerView: 1,
+        spaceBetween: 10,
+
+        breakpoints: {
+          600: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          991: {
+            slidesPerView: 3,
+            spaceBetween: 20,
+          },
+          1200: {
+            slidesPerView: 4,
+            spaceBetween: 20,
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
